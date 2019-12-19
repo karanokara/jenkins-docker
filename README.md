@@ -3,15 +3,22 @@
 
 
 
+## Docker
+
+
 
 ```bash
+sudo docker image ls                                    # listing local images
 
-sudo docker build <path-to-project-folder>
+sudo docker build <path-to-project-folder>              # Build an image
+
+docker run -it <image-id>                               # Run an image
 
 ```
 
-```docker
+### dockerfile
 
+```docker
 # This image is based on a nodejs image
 FROM node:7-onbuild
 
@@ -28,6 +35,7 @@ EXPOSE 8000
 
 ```
 
+## Jenkins
 
 ```jenkins
 

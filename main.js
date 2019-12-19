@@ -3,7 +3,7 @@
 var http = require( 'http' ); // do not change this line
 
 var port = Number( 8000 );
-var hostname = 'localhost';
+var hostname = '0.0.0.0';
 
 var server = http.createServer( function ( request, response ) {
     console.log( request );
