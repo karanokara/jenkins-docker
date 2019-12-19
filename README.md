@@ -12,7 +12,7 @@ sudo docker image ls                                    # listing local images
 
 sudo docker build <path-to-project-folder>              # Build an image
 
-docker run -it <image-id>                               # Run an image
+sudo docker run -it <image-id>                               # Run an image
 
 ```
 
@@ -25,7 +25,7 @@ FROM node:7-onbuild
 # set maintainer
 LABEL mantainer "fdfdfd"
 
-#se a health check
+#set a health check
 HEALTHCHECK --interval=5s \
 			--timeout=5s \
 			CMD curl -f http://127.0.0.1:8000 || exit 127
