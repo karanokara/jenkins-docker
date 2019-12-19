@@ -6,7 +6,7 @@ var port = Number( 8000 );
 var hostname = '0.0.0.0';
 
 var server = http.createServer( function ( request, response ) {
-    console.log( request );
+    console.log( "Coming a request" );
     response.statusCode = 200;
     response.setHeader( 'content-type', 'text/html' );
     response.write( '<!DOCTYPE html><html><body>Hello World!!</body></html>' );

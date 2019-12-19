@@ -10,9 +10,15 @@
 ```bash
 sudo docker image ls                                    # listing local images
 
+sudo docker ps                                          # listing running containers
+
+sudo docker stop <871f413d0673>                         # stop running contain<name>
+
 sudo docker build <path-to-project-folder>              # Build an image
 
-sudo docker run -it <image-id>                               # Run an image
+sudo docker run -it <image-id>                          # Run an image
+
+sudo docker image rm -f 871f413d0673                    # remove image<id>
 
 ```
 
