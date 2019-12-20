@@ -6,7 +6,7 @@ node {
     stage('Cone repository') {
         /* clone repo from github  */
 
-        checkout sca
+        checkout scm
     }
 
     stage('Build image') {
@@ -14,7 +14,7 @@ node {
          * using docker build on the CLI
          */
 
-        app = docker.Build('karanokara/hello-world')
+        app = docker.build('karanokara/hello-world')
     }
 
     stage('Test image') {
