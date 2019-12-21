@@ -3,7 +3,7 @@
 node {
     def app
 
-    stage('Cone repository') {
+    stage('Clone repository') {
         /* clone repo from github  */
 
         checkout scm
@@ -27,14 +27,14 @@ node {
     }
 
     stage("Push image") {
-        /* Finally, push the image with 2 tags:
-        1. the incremental build # from Jenkins
+        /* Finally, push the image to Docker Hub with 2 tags:
+        1. the incremental build # tag from Jenkins
         2. the 'latest' tag
 
         Pushing many tags is cheap, as all the layers are resued
         */
 
-       docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credit') {
+       docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credential') {
            app.push('$(env.BUILD_NUMBER')
            app.push("latest")
        }
