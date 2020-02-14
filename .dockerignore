@@ -1,0 +1,10 @@
+
+
+# To exclude directories
+*/temp*
+node_modules
+
+
+# To exclude files 
+*.exe
+

@@ -8,18 +8,30 @@
 
 
 ```bash
-sudo docker image ls                                    # listing local images
 
-sudo docker ps -a                                       # listing all containers
-sudo docker ps                                          # listing running containers
+# listing local images
+sudo docker image ls
 
-sudo docker stop <871f413d0673>                         # stop running contain<name>
+# listing all containers
+sudo docker ps -a
+# listing running containers
+sudo docker ps
 
-sudo docker build <path-to-project-folder>              # Build an image
+# Build an image
+sudo docker build -t repo:tag /path/to/project/dir
 
-sudo docker run -it <image-id>                          # Run an image
+# Run an image
+# -i: interactive
+# -t: Allocate a pseudo-TTY (terminal)
+# -p: Publish a container's port(s) to the host
+sudo docker run -itp <host-port>:<docker-port> <image-id>
+sudo docker run -itp 8000:8000 8a3ad7cc0b0a
 
-sudo docker image rm -f <871f413d0673>                  # remove image<id>
+# stop running contain<name>
+sudo docker stop <img-id>
+
+# remove image<id>
+sudo docker image rm -f <img-id>
 
 ```
 

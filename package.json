@@ -1,8 +1,13 @@
 {
     "name": "hello-world",
     "version": "1.0.0",
+    "description": "Node.js on Docker",
+    "author": "karanokara",
     "private": true,
     "scripts": {
         "start": "node main"
+    },
+    "dependencies": {
+        "express": "^4.16.1"
     }
 }
