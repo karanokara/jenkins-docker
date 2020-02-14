@@ -3,21 +3,22 @@
 FROM node:7-onbuild
 
 # Create app directory to hold the app code inside the image
-# WORKDIR /usr/src/app
+WORKDIR /usr/src/app
 
-# # Install app dependencies
-# COPY package*.json ./
+# Install app dependencies
+COPY package*.json ./
 
-# RUN npm install
+# run npm to install
+RUN npm install
 
 # set maintainer/Author of image
 LABEL mantainer "KaraNoKara"
 
 # set a health check
-# chekc one time
-# --interval=5s \
-# HEALTHCHECK --timeout=5s \
-# 			CMD curl -i http://localhost:8000 || exit 127
+chekc one time
+--interval=5s \
+HEALTHCHECK --timeout=5s \
+			CMD curl -i http://localhost:8000 || exit 127
 
 
 # set what port to listen
