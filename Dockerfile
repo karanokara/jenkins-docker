@@ -15,6 +15,8 @@ RUN npm install
 LABEL mantainer "KaraNoKara"
 
 # set a health check
+# Note: here we use ``&&\`` to run commands one after the other - the ``\``
+#       allows the RUN command to span multiple lines.
 chekc one time
 --interval=5s \
 HEALTHCHECK --timeout=5s \
