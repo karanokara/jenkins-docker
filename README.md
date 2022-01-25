@@ -16,15 +16,18 @@ sudo docker image ls
 # remove image<id>
 sudo docker image rm -f <img-id>
 
+
 # ----------- List containers -----------
 # listing all containers
 sudo docker ps -a
 # listing running containers
 sudo docker ps
 
+
 # ----------- Build an image from a Dockerfile -----------
 # Build an image
 sudo docker build -t repo:tag /path/to/project/dir
+
 
 # ----------- Run an image as container -----------
 # -i: interactive
@@ -40,14 +43,17 @@ sudo docker run --name <running-container> -e ENVIR=xxx <image-id>
 # run docker image and get into the image using a shell
 docker run -it --entrypoint=/bin/bash <image-id/name>
 
+
 # ----------- Run a command in a running container -----------
 # Run an interactive shell session within a running container
 sudo docker exec -it <container-ID> /bin/bash
 
+
 # ----------- Stop running container(s) -----------
 sudo docker stop <container-id>
 
-# ----------- remove container(s) -----------
+
+# ----------- Remove container(s) -----------
 docker rm <continer-id or name>
 
 
@@ -58,25 +64,6 @@ docker-compose up
 
 # removing built containers
 docker-compose down
-
-```
-
-### dockerfile
-
-```docker
-# This image is based on a nodejs image
-FROM node:7-onbuild
-
-# set maintainer
-LABEL mantainer "fdfdfd"
-
-#set a health check
-HEALTHCHECK --interval=5s \
-            --timeout=5s \
-			CMD curl -f http://127.0.0.1:8000 || exit 127
-			
-# tell docker what port to expose
-EXPOSE 8000		
 
 ```
 
