@@ -1,10 +1,19 @@
+# Set the baseImage to use for subsequent instructions. 
 # This image is based on a nodejs image
 # as a parent image
 FROM node:7-onbuild
 
-# Create app directory to hold the app code inside the image
+# Create and set app directory to hold the app code inside the image
+# later instructions (ADD, COPY, CMD, ENTRYPOINT, or RUN) will be executed there
 WORKDIR /usr/src/app
 
+# Copy files, folders from source (here) to the image's filesystem
+# ADD hello.txt /absolute/path
+ADD hello.txt relative/to/workdir
+
+# Copy files or folders from source to the dest path in the image's filesystem
+# COPY hello.txt /absolute/path
+# COPY hello.txt relative/to/workdir
 # Install app dependencies
 COPY package*.json ./
 
